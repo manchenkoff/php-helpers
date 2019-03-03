@@ -1,17 +1,22 @@
 {
-    "name": "manchenkov/php-helpers",
-    "description": "Useful short helper functions to work with PHP Standard functions, Carbon, Stringy, Arrayzy",
-    "type": "library",
-    "require": {
-        "nesbot/carbon": "^2.14",
-        "danielstjules/stringy": "^3.1",
-        "bocharsky-bw/arrayzy": "^0.6.1"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Artyom Manchenkov",
-            "email": "artyom@manchenkoff.me"
-        }
+  "name": "manchenkov/php-helpers",
+  "description": "Useful short helper functions to work with PHP Standard functions, Carbon, Stringy, Arrayzy",
+  "type": "library",
+  "require": {
+    "nesbot/carbon": "^2.14",
+    "danielstjules/stringy": "^3.1",
+    "bocharsky-bw/arrayzy": "^0.6.1"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Artyom Manchenkov",
+      "email": "artyom@manchenkoff.me"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "src/helpers.php"
     ]
+  }
 }
