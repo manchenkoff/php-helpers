@@ -13,9 +13,11 @@ use Stringy\Stringy;
  *
  * @param string $message
  */
-function alert(string $message)
-{
-    echo $message . PHP_EOL;
+if (!function_exists('alert')) {
+    function alert(string $message)
+    {
+        echo $message . PHP_EOL;
+    }
 }
 
 /**
@@ -23,10 +25,12 @@ function alert(string $message)
  *
  * @param $value
  */
-function dd($value)
-{
-    var_dump($value);
-    die();
+if (!function_exists('dd')) {
+    function dd($value)
+    {
+        var_dump($value);
+        die();
+    }
 }
 
 /**
@@ -37,17 +41,19 @@ function dd($value)
  *
  * @return array|bool|false|string
  */
-function env(string $key, $value = null)
-{
-    if (!is_null($value)) {
-        $setting = "{$key}='{$value}'";
+if (!function_exists('env')) {
+    function env(string $key, $value = null)
+    {
+        if (!is_null($value)) {
+            $setting = "{$key}='{$value}'";
 
-        return putenv($setting);
+            return putenv($setting);
+        }
+
+        $value = getenv($key);
+
+        return is_json($value) ? json_decode($value, true) : $value;
     }
-
-    $value = getenv($key);
-
-    return is_json($value) ? json_decode($value, true) : $value;
 }
 
 /**
@@ -57,11 +63,13 @@ function env(string $key, $value = null)
  *
  * @return bool
  */
-function is_json(string $input)
-{
-    json_decode($input);
+if (!function_exists('is_json')) {
+    function is_json(string $input)
+    {
+        json_decode($input);
 
-    return json_last_error() == JSON_ERROR_NONE;
+        return json_last_error() == JSON_ERROR_NONE;
+    }
 }
 
 /**
@@ -72,21 +80,23 @@ function is_json(string $input)
  *
  * @return \Arrayzy\AbstractArray
  */
-function arrayzy($data = null, $separator = null)
-{
-    if (!is_null($data)) {
-        if (is_array($data)) {
-            return ArrayImitator::create($data);
-        } else if (is_object($data)) {
-            return ArrayImitator::createFromObject($data);
-        } else if (is_string($data) && !is_null($separator)) {
-            return ArrayImitator::createFromString($data, $separator);
-        } else if (is_json($data)) {
-            return ArrayImitator::createFromJson($data);
+if (!function_exists('arrayzy')) {
+    function arrayzy($data = null, $separator = null)
+    {
+        if (!is_null($data)) {
+            if (is_array($data)) {
+                return ArrayImitator::create($data);
+            } else if (is_object($data)) {
+                return ArrayImitator::createFromObject($data);
+            } else if (is_string($data) && !is_null($separator)) {
+                return ArrayImitator::createFromString($data, $separator);
+            } else if (is_json($data)) {
+                return ArrayImitator::createFromJson($data);
+            }
         }
-    }
 
-    return ArrayImitator::create([]);
+        return ArrayImitator::create([]);
+    }
 }
 
 /**
@@ -95,16 +105,20 @@ function arrayzy($data = null, $separator = null)
  *
  * @return Stringy
  */
-function stringy(string $content = '')
-{
-    return Stringy::create($content);
+if (!function_exists('stringy')) {
+    function stringy(string $content = '')
+    {
+        return Stringy::create($content);
+    }
 }
 
 /**
  * Returns a new Carbon instance
  * @return \Carbon\Carbon|\Carbon\CarbonInterface
  */
-function moment()
-{
-    return \Carbon\Carbon::now();
+if (!function_exists('moment')) {
+    function moment()
+    {
+        return \Carbon\Carbon::now();
+    }
 }
