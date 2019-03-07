@@ -32,4 +32,4 @@ or you can add this line to `require` section of `composer.json`
 - `stringy()` create a new Stringy instance from string (can be empty)  
 - `moment()` create a new Carbon instance from now  
 
-See `src/helpers.php` or each extension docs for more details
+See [src/helpers.php](https://github.com/manchenkoff/php-helpers/blob/master/src/helpers.php) or each extension docs for more details
