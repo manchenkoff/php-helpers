@@ -116,8 +116,8 @@ if (!function_exists('stringy')) {
  * Returns a new Carbon instance
  * @return \Carbon\Carbon|\Carbon\CarbonInterface
  */
-if (!function_exists('moment')) {
-    function moment()
+if (!function_exists('now')) {
+    function now()
     {
         return \Carbon\Carbon::now();
     }
