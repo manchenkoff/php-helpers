@@ -45,7 +45,7 @@ if (!function_exists('env')) {
     function env(string $key, $value = null)
     {
         if (!is_null($value)) {
-            $setting = "{$key}='{$value}'";
+            $setting = "{$key}={$value}";
 
             return putenv($setting);
         }
