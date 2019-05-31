@@ -45,11 +45,6 @@ if (!function_exists('env')) {
     function env(string $key, $value = null)
     {
         if (!is_null($value)) {
-            // if contains spaces
-            if (preg_match("/\s/", $value)) {
-                $value = "'{$value}'";
-            }
-
             $setting = "{$key}={$value}";
 
             return putenv($setting);
