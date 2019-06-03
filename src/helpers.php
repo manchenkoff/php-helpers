@@ -8,24 +8,24 @@
 use Arrayzy\ArrayImitator;
 use Stringy\Stringy;
 
-/**
- * Prints clear string into the console with new line char at the end
- *
- * @param string $message
- */
 if (!function_exists('alert')) {
+    /**
+     * Prints clear string into the console with new line char at the end
+     *
+     * @param string $message
+     */
     function alert(string $message)
     {
         echo $message . PHP_EOL;
     }
 }
 
-/**
- * Dump and die (Laravel alternative)
- *
- * @param $value
- */
 if (!function_exists('dd')) {
+    /**
+     * Dump and die (Laravel alternative)
+     *
+     * @param $value
+     */
     function dd($value)
     {
         var_dump($value);
@@ -33,15 +33,15 @@ if (!function_exists('dd')) {
     }
 }
 
-/**
- * Returns or sets $_ENV variable (type casting support)
- *
- * @param string $key
- * @param null $value
- *
- * @return array|bool|false|string
- */
 if (!function_exists('env')) {
+    /**
+     * Returns or sets $_ENV variable (type casting support)
+     *
+     * @param string $key
+     * @param null $value
+     *
+     * @return array|bool|false|string
+     */
     function env(string $key, $value = null)
     {
         if (!is_null($value)) {
@@ -56,14 +56,14 @@ if (!function_exists('env')) {
     }
 }
 
-/**
- * Checks if is a string value JSON format
- *
- * @param string $input
- *
- * @return bool
- */
 if (!function_exists('is_json')) {
+    /**
+     * Checks if is a string value JSON format
+     *
+     * @param string $input
+     *
+     * @return bool
+     */
     function is_json(string $input)
     {
         json_decode($input);
@@ -72,15 +72,15 @@ if (!function_exists('is_json')) {
     }
 }
 
-/**
- * Returns Arrayzy instance, also from different arguments
- *
- * @param null $data
- * @param null $separator
- *
- * @return \Arrayzy\AbstractArray
- */
 if (!function_exists('arrayzy')) {
+    /**
+     * Returns Arrayzy instance, also from different arguments
+     *
+     * @param null $data
+     * @param null $separator
+     *
+     * @return \Arrayzy\AbstractArray
+     */
     function arrayzy($data = null, $separator = null)
     {
         if (!is_null($data)) {
@@ -99,24 +99,24 @@ if (!function_exists('arrayzy')) {
     }
 }
 
-/**
- * Returns Stringy instance, also from different arguments
- * @param string $content
- *
- * @return Stringy
- */
 if (!function_exists('stringy')) {
+    /**
+     * Returns Stringy instance, also from different arguments
+     * @param string $content
+     *
+     * @return Stringy
+     */
     function stringy(string $content = '')
     {
         return Stringy::create($content);
     }
 }
 
-/**
- * Returns a new Carbon instance
- * @return \Carbon\Carbon|\Carbon\CarbonInterface
- */
 if (!function_exists('now')) {
+    /**
+     * Returns a new Carbon instance
+     * @return \Carbon\Carbon|\Carbon\CarbonInterface
+     */
     function now()
     {
         return \Carbon\Carbon::now();
