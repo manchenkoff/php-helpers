@@ -31,7 +31,7 @@ or you can add this line to `require` section of `composer.json`
 | `dd()`        | dump variable and die |
 | `env()`       | get or set new environment variable (getenv, putenv used), also type casting usage (bool, string, numbers) |
 | `is_json()`   | helper for checking is a string in JSON format |
-| `arrayzy()`   | create a new Arrayzy instance from **array | object | string | json** (type checking) |
+| `arrayzy()`   | create a new Arrayzy instance from **array**, **object**, **string**, **json** (type checking) |
 | `stringy()`   | create a new Stringy instance from string (can be empty) |
 | `now()`       | create a new Carbon instance from now |
 
